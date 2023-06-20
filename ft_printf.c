@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:34:08 by albagar4          #+#    #+#             */
-/*   Updated: 2023/06/16 18:12:43 by albagar4         ###   ########.fr       */
+/*   Updated: 2023/06/20 17:18:05 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,18 @@ int	ft_parser(char *format, int i, va_list args)
 		c = ft_print_char(va_arg(args, int));
 	else if (format[i] == 's')
 		c = ft_print_str(va_arg(args, char *));
-/*	else if (format[i] == 'p')
-	else if (format[i] == 'd') */
+	else if (format[i] == 'p')
+		c = ft_print_ptr(va_arg(args, unsigned long long));
+	else if (format[i] == 'd' || format[i] == 'i')
+		c = ft_print_nbr(va_arg(args, int));
+	else if (format[i] == 'u')
+		c = ft_print_unsigned(va_arg(args, unsigned int));
+	else if (format[i] == '%')
+		c = ft_print_char('%');
+	else if (format[i] == 'x')
+		c = ft_print_hex_lower(va_arg(args, unsigned int));
+	else if (format[i] == 'X')
+		c = ft_print_hex_upper(va_arg(args, unsigned int));
 	return (c);
 }
 
@@ -52,8 +62,13 @@ int	ft_printf(char *format, ...)
 	return (count);
 }
 
-int	main(int argc, char **argv)
+/* int	main(void)
 {
-	(void) argc;
-	ft_printf("a alba le gusta solo %s\n", argv[1]);
-}
+	int	*a;
+	int	b;
+
+	b = 6;
+	a = &b;
+	printf("has impreso %i carac: ", ft_printf("%i\n", 47296));
+	return (0);
+} */

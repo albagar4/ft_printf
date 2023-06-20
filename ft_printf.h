@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:34:17 by albagar4          #+#    #+#             */
-/*   Updated: 2023/06/16 18:07:07 by albagar4         ###   ########.fr       */
+/*   Updated: 2023/06/20 16:29:29 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,9 @@
 
 int	ft_print_char(char c);
 int	ft_print_str(char *str);
-
+int	ft_print_ptr(unsigned long long ptr);
+int	ft_print_hex_lower(unsigned long long nbr);
+int	ft_print_hex_upper(unsigned long long nbr);
+int	ft_print_nbr(int n);
+int	ft_print_unsigned(unsigned int nbr);
 #endif

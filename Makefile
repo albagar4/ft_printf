@@ -6,13 +6,14 @@
 #    By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 18:34:20 by albagar4          #+#    #+#              #
-#    Updated: 2023/06/16 18:07:54 by albagar4         ###   ########.fr        #
+#    Updated: 2023/06/20 17:16:36 by albagar4         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf
+NAME = libftprintf.a
 
-SOURCE = ft_printf.c ft_print_char.c ft_print_str.c
+SOURCE = ft_printf.c ft_print_char.c ft_print_str.c ft_print_hex_lower.c \
+		ft_print_ptr.c ft_print_hex_upper.c ft_print_nbr.c ft_print_unsigned.c \
 
 OBJS = $(SOURCE:.c=.o)
 
@@ -25,7 +26,7 @@ RM = rm -rf
 all: libft $(NAME)
 
  $(NAME):  $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) libft/libft.a 
+	ar rcs $(NAME) $(OBJS) libft/libft.a 
 
  $(OBJS):
 	$(CC) $(CFLAGS) -c $(SOURCE)
